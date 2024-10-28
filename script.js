@@ -4,6 +4,18 @@
 const library = [];
 
 const elemBookWrapper = document.getElementsByClassName('books-wrapper')[0];
+const elemNewBookBtn = document.getElementById('new-book-btn');
+const dialog = document.querySelector("dialog");
+const elemCancelBtn = document.getElementById('cancel');
+const elemSubmitBtn = document.getElementById('submit');
+
+elemNewBookBtn.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+elemCancelBtn.addEventListener("click", () => {
+    dialog.close();
+})
 
 function Book(title, author, numPages, isRead) {
     this.title = title;

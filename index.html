@@ -7,10 +7,57 @@
     <title>Library App</title>
 </head>
 <body>
-    <!-- New book form-->
-    <div class="form-wrapper">
+    <!-- New book button -->
+    <div class="button-wrapper">
+        <button id="new-book-btn">ADD NEW BOOK</button>
     </div>
 
+    <!-- New book dialog + form -->
+    <dialog>
+        <fieldset>
+            <legend>
+                <h2>Add Book to Library</h2>
+            </legend>
+
+        <form action="">
+            <ul>
+                <li>
+                    <label for="title">Title <span>*</span></label>
+                    <input 
+                    type="text" 
+                    id="title" 
+                    name="title"
+                    required>
+                </li>
+                <li>
+                    <label for="author">Author <span>*</span></label>
+                    <input 
+                    type="text" 
+                    id="author" 
+                    name="author"
+                    required>
+                </li>
+                <li>
+                    <label for="num-pages">Number of Pages <span>*</span></label>
+                    <input 
+                    type="number" 
+                    id="num-pages" 
+                    name="numPages"
+                    required>
+                </li>
+            </ul>
+        </fieldset>
+
+        <div class="btn-menu">
+            <button id="cancel">Cancel</button>
+            <button id="submit" type="submit">Submit</button>
+        </div>
+
+        </form>
+
+    </dialog>
+
+    <!-- Books list wrapper -->
     <div class="books-wrapper">
         <div class="book">
             <p class="title">The Lord of the Rings</p>
