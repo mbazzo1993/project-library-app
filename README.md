@@ -6,5 +6,7 @@ Project from The Odin Project's JavaScript Course. Link to project page: [Projec
 
 ## To Do
 
-1. [ ] Set up git repo with skeleton HTML, CSS, and JS files.
-2. [ ] 
+1. [X] Set up git repo with skeleton HTML, CSS, and JS files.
+2. [X] Create:
+  1. [X] Array to hold library objects
+  2. [X] Function to store a new book into the array directly from user's input
