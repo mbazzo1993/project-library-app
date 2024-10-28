@@ -10,3 +10,4 @@ Project from The Odin Project's JavaScript Course. Link to project page: [Projec
 2. [X] Create:
   1. [X] Array to hold library objects
   2. [X] Function to store a new book into the array directly from user's input
+3. [X] Write a function to loop through the array and display each book on the page.
