@@ -11,6 +11,6 @@ Project from The Odin Project's JavaScript Course. Link to project page: [Projec
   1. [X] Array to hold library objects
   2. [X] Function to store a new book into the array directly from user's input
 3. [X] Write a function to loop through the array and display each book on the page.
-4. [ ] Add a NEW BOOK button which
+4. [X] Add a NEW BOOK button which
    1. [X] Brings up a modal-based form to enter Title, Author, Pages, Read/Not Read.
-   2. [ ] Displays a submit button that, when clicked, saves the new book to the library array.
+   2. [X] Displays a submit button that, when clicked, saves the new book to the library array.

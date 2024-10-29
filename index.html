@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Library App</title>
 </head>
+
 <body>
     <!-- New book button -->
     <div class="button-wrapper">
@@ -19,33 +21,29 @@
                 <h2>Add Book to Library</h2>
             </legend>
 
-        <form action="">
-            <ul>
-                <li>
-                    <label for="title">Title <span>*</span></label>
-                    <input 
-                    type="text" 
-                    id="title" 
-                    name="title"
-                    required>
-                </li>
-                <li>
-                    <label for="author">Author <span>*</span></label>
-                    <input 
-                    type="text" 
-                    id="author" 
-                    name="author"
-                    required>
-                </li>
-                <li>
-                    <label for="num-pages">Number of Pages <span>*</span></label>
-                    <input 
-                    type="number" 
-                    id="num-pages" 
-                    name="numPages"
-                    required>
-                </li>
-            </ul>
+            <form action="">
+                <ul>
+                    <li>
+                        <label for="title">Title <span>(required)</span></label>
+                        <input type="text" id="title" name="title" required>
+                    </li>
+                    <li>
+                        <label for="author">Author <span>(required)</span></label>
+                        <input type="text" id="author" name="author" required>
+                    </li>
+                    <li>
+                        <label for="num-pages">Number of Pages <span>(required)</span></label>
+                        <input type="number" id="num-pages" name="numPages" required>
+                    </li>
+                    <li>
+                        <div>
+                            <label for="have-read">Have read</label>
+                            <input type="radio" id="have-read" name="status" value="read" checked>
+                            <label for="have-not-read">Have not read</label>
+                            <input type="radio" id="have-not-read" name="status" value="not-read">
+                        </div>
+                    </li>
+                </ul>
         </fieldset>
 
         <div class="btn-menu">
@@ -59,14 +57,9 @@
 
     <!-- Books list wrapper -->
     <div class="books-wrapper">
-        <div class="book">
-            <p class="title">The Lord of the Rings</p>
-            <p class="author">JRR Tolkein</p>
-            <p class="pages">1000 pages</p>
-            <img src="./assets/read.svg" alt="have read">
-        </div>
     </div>
-    
+
     <script src="./script.js"></script>
 </body>
+
 </html>

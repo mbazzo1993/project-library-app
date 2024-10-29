@@ -1,13 +1,10 @@
-/**
- * GLOBAL VARIABLES
- */
 const library = [];
 
 const elemBookWrapper = document.getElementsByClassName('books-wrapper')[0];
 const elemNewBookBtn = document.getElementById('new-book-btn');
 const dialog = document.querySelector("dialog");
 const elemCancelBtn = document.getElementById('cancel');
-const elemSubmitBtn = document.getElementById('submit');
+const elemForm = document.querySelector('form');
 
 elemNewBookBtn.addEventListener("click", () => {
     dialog.showModal();
@@ -16,6 +13,8 @@ elemNewBookBtn.addEventListener("click", () => {
 elemCancelBtn.addEventListener("click", () => {
     dialog.close();
 })
+
+elemForm.addEventListener("submit", handleNewBookOnSubmit);
 
 function Book(title, author, numPages, isRead) {
     this.title = title;
@@ -61,4 +60,37 @@ function clearBooks() {
     while (elemBookWrapper.lastElementChild) {
         elemBookWrapper.removeChild(elemBookWrapper.lastElementChild);
     }
+}
+
+function clearForm() {
+    Array.from(elemForm.elements).forEach((input) => {
+        if (input.id === 'have-read') {
+            input.checked = true;
+        } else if (input.id === 'have-not-read') {
+            input.checked = false;
+        } else {
+            input.value = ''
+        }
+    });
+}
+
+function handleNewBookOnSubmit(event) {
+    event.preventDefault();
+
+	const data = new FormData(event.target);
+	const dataObject = Object.fromEntries(data.entries());
+
+    const title = dataObject.title;
+    const author = dataObject.author;
+    const numPages = Number(dataObject.numPages);
+    const isRead = dataObject.status === "read" ? true : false;
+    console.log(dataObject);
+    console.log(dataObject.status);
+
+    addBookToLibrary(title, author, numPages, isRead);
+
+    dialog.close();
+    clearBooks();
+    displayBooks();
+    clearForm();
 }
