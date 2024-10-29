@@ -20,12 +20,21 @@ elemForm.addEventListener("submit", handleNewBookOnSubmit);
 elemBooks.addEventListener('click', hadleRemoveEvent);
 
 function hadleRemoveEvent(event) {
-    let ind = event.target.parentElement.dataset.index
-    library.splice(ind,1);
-    console.log(library);
-    clearBooks();
-    displayBooks();
-    console.log(library);
+
+    if (event.target.nodeName === 'BUTTON') {
+        let ind = event.target.parentElement.dataset.index
+        library.splice(ind,1);
+        clearBooks();
+        displayBooks();
+    }
+
+    if (event.target.nodeName === 'IMG') {
+        let ind = event.target.parentElement.dataset.index
+        library[ind].isRead = !library[ind].isRead;
+        console.log()
+        clearBooks();
+        displayBooks();
+    }
 }
 
 
