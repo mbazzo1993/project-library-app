@@ -5,6 +5,7 @@ const elemNewBookBtn = document.getElementById('new-book-btn');
 const dialog = document.querySelector("dialog");
 const elemCancelBtn = document.getElementById('cancel');
 const elemForm = document.querySelector('form');
+const elemBooks = document.getElementsByClassName('books-wrapper')[0];
 
 elemNewBookBtn.addEventListener("click", () => {
     dialog.showModal();
@@ -15,6 +16,18 @@ elemCancelBtn.addEventListener("click", () => {
 })
 
 elemForm.addEventListener("submit", handleNewBookOnSubmit);
+
+elemBooks.addEventListener('click', hadleRemoveEvent);
+
+function hadleRemoveEvent(event) {
+    let ind = event.target.parentElement.dataset.index
+    library.splice(ind,1);
+    console.log(library);
+    clearBooks();
+    displayBooks();
+    console.log(library);
+}
+
 
 function Book(title, author, numPages, isRead) {
     this.title = title;
@@ -32,8 +45,10 @@ function addBookToLibrary(title, author, numPages, isRead) {
 }
 
 function displayBooks() {
+    let ind = 0
     for (const book of library) {
         let newBook = document.createElement('div');
+        newBook.dataset.index = ind;
         newBook.classList.add('book');
 
         let newBookTitle = document.createElement('p');
@@ -52,7 +67,12 @@ function displayBooks() {
         newBookStatus.src = book.isRead ? './assets/read.svg' : './assets/not-read.svg';
         newBook.appendChild(newBookStatus);
 
+        let newBookDelBtn = document.createElement('button');
+        newBookDelBtn.innerText = 'Remove';
+        newBook.appendChild(newBookDelBtn);
+
         elemBookWrapper.appendChild(newBook)
+        ind++;
     }
 }
 

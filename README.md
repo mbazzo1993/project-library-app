@@ -14,3 +14,7 @@ Project from The Odin Project's JavaScript Course. Link to project page: [Projec
 4. [X] Add a NEW BOOK button which
    1. [X] Brings up a modal-based form to enter Title, Author, Pages, Read/Not Read.
    2. [X] Displays a submit button that, when clicked, saves the new book to the library array.
+5. [X] Add button to each book to delete book from library
+  1. [X] Ensure each book element is associated with array element in some way
+6. [ ] Add a button on each book's  display to change its read status
+  1. [ ] Create a function that toggles a book's read status on the Book prototype function.
