@@ -18,3 +18,54 @@ Project from The Odin Project's JavaScript Course. Link to project page: [Projec
   1. [X] Ensure each book element is associated with array element in some way
 6. [X] Add a button on each book's  display to change its read status
   1. [X] Create a function that toggles a book's read status on the Book prototype function.
+
+## Update: Refactor code using classes
+
+Date: Nov 11, 2024
+
+Need to redesign the app in terms of JS classes. Most obvious approach is to think about what sorts of objects are in play...
+
+__A) Book__
+
+Need a class that typifies a book.
+
+Required properties:
+* Title
+* Author
+* Number of pages
+* Is read
+
+Required methods:
+* Change status (change isRead value)
+* Various getters and setters for book properties
+* Add constructor as well
+
+__B) Library__
+
+Need a class to represent the library
+
+Required properties:
+* Books (array)
+
+Required methods
+* Add a book
+* Remove a book
+
+__C) DOM Changes__
+
+Need a class to handle the DOM changes
+
+Required properties:
+* The relevant dom elements
+* The relevant event listeners
+
+Required methods:
+* Probably none.
+
+The program must create an instance of the DOM Changes class. Hopefully this will be enough to register the event listeners.
+
+## To Do Items
+
+1. [X] Create the book class and test it in the console.
+2. [X] Create a library class and test it in the console.
+3. [X] Create dom change class and test the whole program.
